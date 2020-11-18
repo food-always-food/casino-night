@@ -7,14 +7,12 @@ from time import sleep
 reader = SimpleMFRC522()
 
 while True:
-	try:
-	        id, text = reader.read()
-	        #print(id)
-	        os.system('clear')
-	        print(text)
-	        sleep(1)
-	        
-	finally:
-		GPIO.cleanup()
-			
-	
+    try:
+        id, text = reader.read()
+        # print(id)
+        os.system("clear")
+        print(text)
+        sleep(1)
+
+    finally:
+        GPIO.cleanup()
