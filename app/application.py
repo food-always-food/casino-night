@@ -1,7 +1,7 @@
 from flask import render_template, session, request, redirect, Flask
 from flask_socketio import SocketIO, emit, send, join_room
 from time import sleep
-import eventlet
+import eventlet, reader
 
 eventlet.monkey_patch()
 
@@ -24,7 +24,8 @@ def test_connect():
 @socketio.on("server")
 def test_connect(data):
     print(data)
-    emit("client", "hi", callback=wait_for_card)
+    id = reader.get_card()
+    emit("client", id)
     join_room("page")
 
 
