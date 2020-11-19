@@ -14,12 +14,11 @@ $(document).ready(function () {
 
 socket.on('client', function (data) {
     console.log(data)
+    $(".light").html(data)
+    setTimeout(function(){$(".light").html('Home')}, 1000);
+    
 });
 
-socket.on('chatJoin', function (data) {
-    console.log(data)
-    player = data[0].id;
-});
 
 socket.on('new-player', function (data) {
     console.log(data)

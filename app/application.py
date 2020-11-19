@@ -13,7 +13,7 @@ app = application
 
 @app.route("/", methods=["GET"])
 def welcome():
-    return render_template("home.html", page={"background": "test.jpg"})
+    return render_template("index.html", page={"background": "test.jpg"})
 
 
 @socketio.on("connect")
@@ -22,7 +22,7 @@ def test_connect():
 
 
 @socketio.on("server")
-def test_connect(data):
+def waiting_for_card(data):
     print(data)
     id = reader.get_card()
     emit("client", id)
