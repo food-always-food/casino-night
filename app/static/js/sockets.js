@@ -16,6 +16,7 @@ socket.on('client', function (data) {
     console.log(data)
     $(".light").html(data)
     setTimeout(function(){$(".light").html('Home')}, 1000);
+    socket.emit('server',{});
     
 });
 

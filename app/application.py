@@ -13,7 +13,7 @@ app = application
 
 @app.route("/", methods=["GET"])
 def welcome():
-    return render_template("index.html", page={"background": "test.jpg"})
+    return render_template("home.html", page={"background": "test.jpg"})
 
 
 @socketio.on("connect")

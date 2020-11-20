@@ -1,14 +1,13 @@
-# import RPi.GPIO as GPIO
-# from mfrc522 import SimpleMFRC522
+import RPi.GPIO as GPIO
+from mfrc522 import SimpleMFRC522
 from time import sleep
 
-# reader = SimpleMFRC522()
+reader = SimpleMFRC522()
 
 def get_card():
     try:
-        # id, text = reader.read()
-        id = "Penis"
-        sleep(5)
+        id, text = reader.read()
+        # id = "Penis"
         return id
 
     except:
